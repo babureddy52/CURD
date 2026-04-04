@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="maroon">
+      <form action="{% url 'update' %}" method="post" align="center" >
+          {% csrf_token %}
+          <table align="center" bgcolor="skyblue">
+              <tr>
+                  <th>Eid</th>
+                  <th><input type="number" name="eid" value="{{empdata.Eid}}"></th>
+              </tr>
+              <tr>
+                  <th>Ename</th>
+                  <th><input type="text" name="ename" value="{{empdata.Ename}}"></th>
+              </tr>
+              <tr>
+                  <th>Phno</th>
+                  <th><input type="number" name="phno" value="{{empdata.Phno}}"></th>
+              </tr>
+              <tr>
+                  <th>Salary</th>
+                  <th><input type="number" name="sal" value="{{empdata.Salary}}"></th>
+              </tr>
+              <tr>
+                  <th colspan="2"><input type="submit" value="update"></th>
+              </tr>
+          </table>
+      </form>
+</body>
+</html>

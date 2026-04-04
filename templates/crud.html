@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body bgcolor="skyblue">
+
+<h2 align="center">Employee Records</h2>
+
+<table border="1" align="center" bgcolor="grey" width="80%" cellspacing="0">
+    <tr style="color:orange;">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Salary</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr><br>
+
+        {% for i in edata %}
+    <tr style="color:white;">
+
+        <th>{{ i.Eid }}</th>
+        <th>{{ i.Ename }}</th>
+        <th>{{ i.Phno }}</th>
+        <th>{{ i.Salary }}</th>
+        <th><a href="{% url 'uprec' i.Eid %}" style="color:yellow;">Update</a></th>
+        <th><a href="{% url 'delrec' i.Eid %}" style="color:red;">Delete</a></th>
+    </tr>
+    {% endfor %}
+
+
+    <tr>
+        <th colspan="6" align="center">
+            <a href="{% url 'insert' %}">Insert New Employee</a>
+        </th>
+    </tr>
+
+</table>
+
+</body>
+</html>
