@@ -2,32 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Update Employee</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Segoe UI, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#4b134f,#c94b4b);
+        }
+
+        form{
+            background:white;
+            padding:35px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        th{
+            padding:12px;
+            text-align:left;
+            color:#444;
+            font-size:17px;
+        }
+
+        input[type="text"],
+        input[type="number"]{
+            width:260px;
+            padding:10px;
+            border:2px solid #ddd;
+            border-radius:8px;
+            font-size:15px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus{
+            outline:none;
+            border-color:#c94b4b;
+            box-shadow:0 0 8px rgba(201,75,75,0.4);
+        }
+
+        input[type="submit"]{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#c94b4b;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        input[type="submit"]:hover{
+            background:#a63d3d;
+        }
+    </style>
 </head>
-<body bgcolor="maroon">
-      <form action="{% url 'update' %}" method="post" align="center" >
-          {% csrf_token %}
-          <table align="center" bgcolor="skyblue">
-              <tr>
-                  <th>Eid</th>
-                  <th><input type="number" name="eid" value="{{empdata.Eid}}"></th>
-              </tr>
-              <tr>
-                  <th>Ename</th>
-                  <th><input type="text" name="ename" value="{{empdata.Ename}}"></th>
-              </tr>
-              <tr>
-                  <th>Phno</th>
-                  <th><input type="number" name="phno" value="{{empdata.Phno}}"></th>
-              </tr>
-              <tr>
-                  <th>Salary</th>
-                  <th><input type="number" name="sal" value="{{empdata.Salary}}"></th>
-              </tr>
-              <tr>
-                  <th colspan="2"><input type="submit" value="update"></th>
-              </tr>
-          </table>
-      </form>
+<body>
+
+<form action="{% url 'update' %}" method="post">
+    {% csrf_token %}
+
+    <h2>Update Employee</h2>
+
+    <table>
+        <tr>
+            <th>Eid</th>
+            <td><input type="number" name="eid" value="{{empdata.Eid}}"></td>
+        </tr>
+
+        <tr>
+            <th>Ename</th>
+            <td><input type="text" name="ename" value="{{empdata.Ename}}"></td>
+        </tr>
+
+        <tr>
+            <th>Phno</th>
+            <td><input type="number" name="phno" value="{{empdata.Phno}}"></td>
+        </tr>
+
+        <tr>
+            <th>Salary</th>
+            <td><input type="number" name="sal" value="{{empdata.Salary}}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Update Employee">
+            </td>
+        </tr>
+    </table>
+
+</form>
+
 </body>
 </html>

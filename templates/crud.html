@@ -2,10 +2,111 @@
 <html>
 <head>
     <title>Employee List</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .container{
+        width:85%;
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        text-align:center;
+        color:#333;
+        margin-bottom:20px;
+        font-size:32px;
+    }
+
+    table{
+        width:100%;
+        border-collapse:collapse;
+        overflow:hidden;
+        border-radius:10px;
+    }
+
+    th{
+        background:#2c3e50;
+        color:white;
+        padding:15px;
+        font-size:18px;
+    }
+
+    td{
+        text-align:center;
+        padding:12px;
+        border-bottom:1px solid #ddd;
+    }
+
+    tr:nth-child(even){
+        background:#f8f9fa;
+    }
+
+    tr:hover{
+        background:#d6ecff;
+        transition:0.3s;
+    }
+
+    .update{
+        background:#28a745;
+        color:white;
+        padding:8px 15px;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    .update:hover{
+        background:#218838;
+    }
+
+    .delete{
+        background:#dc3545;
+        color:white;
+        padding:8px 15px;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    .delete:hover{
+        background:#c82333;
+    }
+
+    .insert{
+        display:inline-block;
+        background:#007bff;
+        color:white;
+        padding:10px 20px;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+        margin-top:10px;
+    }
+
+    .insert:hover{
+        background:#0056b3;
+    }
+</style>
 </head>
 <body bgcolor="skyblue">
 
-<h2 align="center">Employee Records</h2>
+<h1 align="center">Employee Records</h1>
 
 <table border="1" align="center" bgcolor="grey" width="80%" cellspacing="0">
     <tr style="color:orange;">
